@@ -53,6 +53,31 @@ def validate(root: Path, package: bool) -> list[str]:
     if root.name != EXPECTED_NAME and package:
         failures.append(f"Package directory must be {EXPECTED_NAME!r}; found {root.name!r}")
 
+    if not package:
+        repository_files = {
+            ".github/workflows/secret-scan.yml",
+            "docs/release-gates.md",
+            "docs/security-rollback.md",
+        }
+        for relative in sorted(repository_files):
+            if not (root / relative).is_file():
+                failures.append(f"Missing repository control: {relative}")
+
+        readme_path = root / "README.md"
+        readme = readme_path.read_text(encoding="utf-8") if readme_path.is_file() else ""
+        if "Release Candidate | Pilot Pending" not in readme:
+            failures.append("README must show the release-candidate pilot-pending status")
+        if "Repository privacy gate" not in readme:
+            failures.append("README must show the proprietary repository privacy gate")
+
+        workflow = root / ".github" / "workflows" / "secret-scan.yml"
+        if workflow.is_file():
+            workflow_text = workflow.read_text(encoding="utf-8")
+            if "fetch-depth: 0" not in workflow_text:
+                failures.append("History-aware secret scan must fetch full Git history")
+            if "gitleaks/gitleaks-action@" not in workflow_text:
+                failures.append("History-aware secret scan must invoke Gitleaks")
+
     for relative in sorted(REQUIRED_REFERENCES):
         if not (root / relative).is_file():
             failures.append(f"Missing required reference: {relative}")

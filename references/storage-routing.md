@@ -103,3 +103,11 @@ Avoid one huge undifferentiated document and avoid a separate page for every min
 - Re-fetch or reopen each batch before continuing.
 - Require approval for destructive moves, merges, deletions, permission changes, or publication into a new authoritative system.
 - If verification fails, stop further writes and restore or retain the last known-good state.
+
+## Refresh and Ownership
+
+- Assign one stable owner for the map and one owner for each authoritative destination when they differ.
+- Record a review cadence based on change risk: fast-changing operational or regulated knowledge needs more frequent review than stable historical knowledge.
+- Use event-based refresh triggers for vendor releases, policy or law changes, migrations, source deprecations, ownership changes, contradictions, and failed retrieval tests.
+- Re-run source freshness, duplicate search, integrity checks, live retrieval, and a realistic task after material updates.
+- Keep review evidence in the operational tracking system; keep the evergreen knowledge focused on current truth.

@@ -8,6 +8,8 @@ Date: YYYY-MM-DD | Agent: [agent] | Status: Draft | Active | Partial | Review Ne
 - Business or operational outcome:
 - Intended users or agents:
 - Owner:
+- Review owner:
+- Review cadence:
 - Included scope:
 - Excluded scope:
 - Version, geography, and time boundary:
@@ -63,4 +65,5 @@ Date: YYYY-MM-DD | Agent: [agent] | Status: Draft | Active | Partial | Review Ne
 - Conflicting sources:
 - Excluded or inaccessible sources:
 - Review date or trigger:
+- Next scheduled review:
 - Follow-up owner:

@@ -18,7 +18,9 @@ This repository is the technical source of truth for the ZedBiz-owned `z-agent-k
 - Do not store researched knowledge domains, source dumps, client material, credentials, or complete environment files in this repository.
 - Track material repository activity in GitHub issue 1 or a later scoped issue.
 - Update the Notion SOP and Technical Documentation journal when operational behavior changes.
+- Keep every release surface at `Release Candidate | Pilot Pending` until one named runtime pilot passes the documented promotion gates.
+- Keep proprietary deployment blocked while repository visibility remains public.
 
 ## Completion Standard
 
-A change is complete only when the shared package validates, required references exist, the generated package matches the source, no secrets are present, target runtime guidance remains accurate, GitHub tracking is updated, and live operational records are read back after publication.
+A repository change is complete when the shared package validates, required references exist, the generated package matches the source, current-tree and history-aware secret checks pass, target runtime guidance remains accurate, GitHub tracking is updated, and live operational records are read back after publication. A release is not production-ready until its named pilot also passes discovery, behavior, retrieval, and rollback gates.

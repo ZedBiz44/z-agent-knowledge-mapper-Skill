@@ -1,6 +1,6 @@
 # Validation Record
 
-Date: 2026-08-20 | Agent: Cody | Status: Structural Validation Passed; Live Pilot Pending
+Date: 2026-08-20 | Agent: Cody | Status: Release Candidate | Pilot Pending
 
 ## Release Candidate Scope
 
@@ -20,7 +20,7 @@ Date: 2026-08-20 | Agent: Cody | Status: Structural Validation Passed; Live Pilo
 - Generated-package validation: passed
 - Source/package SHA-256 comparison: passed for every packaged file
 - Broken-reference scan: passed
-- Secret-pattern scan: passed
+- Narrow current-tree secret-pattern screen: passed; this is not a comprehensive security audit
 - Positive, paraphrased, boundary, and negative trigger review: passed at the static release-candidate level
 - Current official OpenClaw and Hermes skill documentation review: passed
 - Git diff whitespace check: passed
@@ -34,3 +34,14 @@ Date: 2026-08-20 | Agent: Cody | Status: Structural Validation Passed; Live Pilo
 No OpenClaw or Hermes production agent was named as a deployment target in the initial build assignment. Live installation, fresh-session discovery, and realistic runtime retrieval must be recorded for the first approved pilot before fleet-wide deployment.
 
 The local build environment did not have an OpenClaw or Hermes executable, so no claim of live runtime discovery is made in this record.
+
+## Manus Review Improvement Pass
+
+- Release status aligned to `Release Candidate | Pilot Pending`: implemented in repository documents; Notion and GitHub tracking update required with publication.
+- Knowledge refresh ownership, cadence, and event triggers: implemented.
+- Immutable release-candidate tag: planned as `v0.1.0-rc1` on the reviewed improvement commit.
+- History-aware Gitleaks workflow: implemented; passing GitHub Actions evidence required after publication.
+- Secret-scan wording narrowed to avoid claiming full security assurance: implemented.
+- Notion database metadata fields: live schema update required with publication.
+- Repository privacy: confirmed public and remains a blocking gate because the available connected GitHub controls do not expose visibility changes.
+- Live one-agent pilot: remains required before production or fleet promotion.

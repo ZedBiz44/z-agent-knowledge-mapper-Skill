@@ -120,6 +120,15 @@ Completion requires proof through the same retrieval surface the intended agent 
 
 File presence, a successful write call, or direct text search alone is not retrieval proof.
 
+## Refresh and Maintain the Map
+
+- Assign a stable owner for the knowledge map and every canonical destination.
+- Set a review cadence proportionate to how quickly the domain changes.
+- Define event triggers such as a major vendor release, policy or law change, product migration, ownership change, source deprecation, or failed retrieval test.
+- On review, recheck source authority and freshness, search for duplicates, update the coverage manifest, rebuild or re-index when required, and repeat practical retrieval proof.
+- Mark stale or unverified records clearly. Do not let outdated knowledge remain silently active.
+- Record the review date, reviewer, changes, evidence, gaps, and next review trigger in the designated operational record.
+
 ## Use Specialist Skills When Available
 
 - Use the environment's knowledge-routing workflow when the authoritative destination is unclear.

@@ -1,6 +1,6 @@
 # Security and Rollback
 
-Date: 2026-08-20 | Agent: Cody | Status: Active
+Date: 2026-08-20 | Agent: Cody | Status: Release Candidate Controls
 
 ## Trust Boundaries
 
@@ -22,6 +22,20 @@ Date: 2026-08-20 | Agent: Cody | Status: Active
 - Require approval for destructive merges, moves, deletions, permission changes, production configuration, or publication into a new authoritative system.
 - Validate paths, parents, collections, and ownership before writing.
 - Stop additional batches when retrieval or integrity checks fail.
+
+## Secret Scanning
+
+- `scripts/validate_repository.py` performs a narrow current-tree pattern screen. Treat it as a fast authoring check, not complete security assurance.
+- `.github/workflows/secret-scan.yml` checks full Git history with Gitleaks on pushes, pull requests, scheduled runs, and manual runs.
+- Review every finding. If a real secret entered Git history, rotate or revoke it immediately before considering history cleanup.
+- Removing a secret from the current file does not remove it from previous commits, clones, forks, caches, or logs.
+- Do not suppress a finding without recording why it is a verified false positive.
+
+## Repository Visibility
+
+- This skill is declared proprietary. Its authoritative repository must be private before proprietary deployment.
+- A restrictive license controls permission; it does not make a public repository confidential.
+- If a public edition is desired, publish a deliberately sanitized copy with a conscious public license and no internal operating details.
 
 ## Rollback
 

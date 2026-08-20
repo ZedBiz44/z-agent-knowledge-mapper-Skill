@@ -1,6 +1,10 @@
 # Z Agent Knowledge Mapper Skill
 
-Date: 2026-08-20 | Agent: Cody | Status: Initial Release
+Date: 2026-08-20 | Agent: Cody | Status: Release Candidate | Pilot Pending
+
+> **Release gate:** This skill is structurally validated but is not production- or fleet-ready until one approved OpenClaw or Hermes pilot passes discovery, trigger, storage, retrieval, realistic-task, and rollback tests.
+
+> **Repository privacy gate:** This repository is currently public while the skill is licensed as proprietary. Repository visibility must be changed to private before proprietary deployment. The license restricts reuse but does not undo public disclosure.
 
 `z-agent-knowledge-mapper` helps an AI agent learn a broad knowledge domain by auditing existing knowledge, planning coverage, researching authoritative sources, preventing duplication, organizing canonical records, selecting a wiki-first destination, and proving live retrieval.
 
@@ -16,6 +20,14 @@ It supports OpenClaw and Hermes from one canonical skill. Platform differences l
 - It verifies through the intended agent's live retrieval surface.
 
 This skill complements narrower routing, record, wiki, and database-publishing skills. It can use those as implementation helpers without duplicating their platform-specific procedures.
+
+## Release Status
+
+- Current version: `v0.1.0-rc1` release candidate.
+- Runtime evidence: pending one named pilot agent.
+- Fleet rollout: blocked until the pilot passes.
+- Proprietary deployment: blocked until repository visibility is private.
+- Promotion evidence: use `docs/release-gates.md` and `docs/test-prompts.md`.
 
 ## Source of Truth
 
@@ -37,6 +49,8 @@ The skill was designed from ZedBiz's proprietary `z-support-doc-ingestion` workf
 - `agents/openai.yaml`: Codex/OpenAI interface metadata.
 - `scripts/build_package.py`: produces the minimal deployable package.
 - `scripts/validate_repository.py`: runs deterministic repository checks.
+- `.github/workflows/secret-scan.yml`: runs a history-aware Gitleaks scan in GitHub Actions.
+- `docs/release-gates.md`: records privacy, pilot, security, version, and promotion gates.
 
 ## Build and Validate
 
@@ -58,6 +72,10 @@ OpenClaw can install Git-hosted skills with its current skills CLI. Hermes suppo
 - Build a reusable domain map from these documents, websites, and database records.
 
 Quick factual questions, one-off answers, and a single small record should not trigger the skill.
+
+## Security Scan Scope
+
+The local repository validator performs a small current-tree pattern screen. It is not a complete security audit. GitHub Actions performs the broader history-aware Gitleaks scan with full checkout history. Any real finding requires secret rotation and review of Git history; deleting the visible string from the latest commit is not sufficient.
 
 ## Current Platform References
 

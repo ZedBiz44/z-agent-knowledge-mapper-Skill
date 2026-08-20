@@ -46,6 +46,9 @@ Expected: do not activate the broad knowledge-mapping workflow; use the narrower
 
 For each OpenClaw or Hermes pilot, record:
 
+- repository visibility confirmed private for proprietary deployment;
+- immutable release-candidate tag and exact commit;
+- passing history-aware secret-scan run;
 - runtime and version;
 - installed package commit and checksum;
 - exact skill root;

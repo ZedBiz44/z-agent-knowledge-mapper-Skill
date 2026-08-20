@@ -1,6 +1,6 @@
 # Skill Implementation Profile
 
-Date: 2026-08-20 | Agent: Cody | Status: Release Candidate
+Date: 2026-08-20 | Agent: Cody | Status: Release Candidate | Pilot Pending
 
 ## Identity and Ownership
 
@@ -11,6 +11,8 @@ Date: 2026-08-20 | Agent: Cody | Status: Release Candidate
 - Operational source: Notion `z-agent-knowledge-mapper-Skill-SOP`
 - Provenance: ZedBiz-authored expansion of the proprietary `z-support-doc-ingestion` workflow
 - License: Proprietary; all rights reserved
+- Repository visibility: Public at review time; proprietary deployment is blocked until changed to private
+- Release candidate: `v0.1.0-rc1` after the Manus review improvements are published
 
 ## Skill Contract
 
@@ -41,6 +43,7 @@ Date: 2026-08-20 | Agent: Cody | Status: Release Candidate
 
 - Operating mode: follow the assigned task mode. Diagnose Mode requires solution and confirmation before mutation.
 - Pilot rule: install and test on one approved OpenClaw or Hermes agent before wider rollout.
+- Pilot version rule: install by immutable release-candidate tag or exact commit, never a moving branch.
 - Approval: require human approval for destructive merge, deletion, move, privilege change, production service change, restricted data handling, or broader rollout.
 - Retry limit: stop after three failures for the same validation or repair condition.
 - Rollback: restore the prior skill package and last known-good knowledge state, then re-run discovery and retrieval checks.
@@ -54,3 +57,5 @@ Date: 2026-08-20 | Agent: Cody | Status: Release Candidate
 - No secret-like content is present.
 - Target runtime discovery and realistic retrieval are recorded for each deployment.
 - GitHub issue and Notion operational records link the committed artifact.
+- Repository visibility is private before proprietary deployment.
+- The immutable release-candidate tag and package checksum are recorded for the pilot.
