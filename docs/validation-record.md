@@ -22,7 +22,7 @@ Date: 2026-08-20 | Agent: Cody | Status: Release Candidate | Pilot Pending
 - Source/package comparison: passed; all nine packaged files matched by SHA-256.
 - Broken-reference and Git whitespace checks: passed.
 - Narrow current-tree secret screen: passed; this is not a complete security audit.
-- History-aware secret scan: required after publication.
+- History-aware secret scan: passed for portability commit `fcf8e6c` in [GitHub Actions run 32402210833](https://github.com/ZedBiz44/z-agent-knowledge-mapper-Skill/actions/runs/32402210833).
 - Portable-package organization/provider-name screen: passed.
 
 ## Behavior Review
