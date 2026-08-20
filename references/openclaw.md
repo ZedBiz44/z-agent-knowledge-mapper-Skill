@@ -25,6 +25,7 @@ Do not assume every OpenClaw host has the same user, workspace, container layout
 - Follow the active wiki's supported top-level lanes, metadata, naming, privacy, compile, lint, and ownership rules.
 - If the wiki is read-only for this agent, use it for duplicate detection and retrieval but route writes to the approved coordinator or writable canonical source.
 - If no maintained wiki exists, use the approved Markdown or database fallback from [storage routing](storage-routing.md).
+- Before creating records, check whether the installed `zedbiz-knowledge-routing` or `z-knowledge-routing`, `z-record-knowledge`, `z-notion-knowledge-publish`, or `small-bite-wiki-research` skill governs the required routing, record, publishing, or staged-research work.
 
 Never invent a wiki root from a common example. The current runtime is the authority for the active path.
 

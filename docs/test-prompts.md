@@ -59,3 +59,6 @@ For each OpenClaw or Hermes pilot, record:
 - realistic task result;
 - negative-trigger result;
 - rollback package and outcome if needed.
+- Hindsight atomic Document IDs created or updated, or `none` with the reason;
+- Z-Knowledge lifecycle status for the landing page or manifest;
+- last-verified metadata check for any Ruby/Hermes action-driving fact older than seven days.

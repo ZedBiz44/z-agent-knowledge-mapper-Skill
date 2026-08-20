@@ -21,6 +21,8 @@ It supports OpenClaw and Hermes from one canonical skill. Platform differences l
 
 This skill complements narrower routing, record, wiki, and database-publishing skills. It can use those as implementation helpers without duplicating their platform-specific procedures.
 
+In ZedBiz environments, it explicitly checks `zedbiz-knowledge-routing` or `z-knowledge-routing`, `z-record-knowledge`, `z-notion-knowledge-publish`, and `small-bite-wiki-research` before creating records.
+
 ## Release Status
 
 - Current version: `v0.1.0-rc1` release candidate.
@@ -51,6 +53,7 @@ The skill was designed from ZedBiz's proprietary `z-support-doc-ingestion` workf
 - `scripts/validate_repository.py`: runs deterministic repository checks.
 - `.github/workflows/secret-scan.yml`: runs a history-aware Gitleaks scan in GitHub Actions.
 - `docs/release-gates.md`: records privacy, pilot, security, version, and promotion gates.
+- `docs/pilot-plan.md`: defines the narrow first Ruby/Hermes pilot and its pass/fail evidence.
 
 ## Build and Validate
 

@@ -70,6 +70,23 @@ Use current live verification for changeable facts when feasible. Label inferenc
 - State freshness and review triggers for changeable domains.
 - Preserve exact wording only when legally or operationally necessary and allowed.
 
+## Create Atomic Documents for Exact Facts
+
+Use a small atomic document when an exact, action-driving value must be reproduced without paraphrase, including a public URL, non-secret identifier, date, figure, limit, version number, model name, or official status.
+
+Each atomic document must contain:
+
+- one exact fact or one tightly coupled set of values;
+- a stable descriptive title and unique Document ID;
+- the authoritative source URL or durable source record;
+- captured and last-verified dates, applicable version or scope, owner, lifecycle status, and sensitivity;
+- the exact value clearly separated from context;
+- a review trigger or expiry rule when the fact can change.
+
+Keep narrative records for context, decisions, reasoning, relationships, and lessons. Link narrative records to atomic documents instead of copying exact values into several places.
+
+Never store passwords, API keys, bearer tokens, private keys, session cookies, recovery codes, or other credential values in an atomic document. Store only a safe credential reference or secret-manager identifier when authorized.
+
 ## Research Completion Evidence
 
 Record:

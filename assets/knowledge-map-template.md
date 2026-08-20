@@ -1,6 +1,6 @@
 # Knowledge Map
 
-Date: YYYY-MM-DD | Agent: [agent] | Status: Draft | Active | Partial | Review Needed
+Date: YYYY-MM-DD | Agent: [agent] | Status: Intake | Draft | Needs Verification | Active Reference | Needs Review | Archived
 
 ## Domain and Outcome
 
@@ -34,6 +34,14 @@ Date: YYYY-MM-DD | Agent: [agent] | Status: Draft | Active | Partial | Review Ne
 | Proposed topic | Existing candidates | Decision | Canonical location | Reason |
 |---|---|---|---|---|
 | [topic] | [locations or none] | [reused, updated, merged, linked, created, or not stored] | [location] | [reason] |
+
+## Hindsight Atomic Documents
+
+| Document ID | Stable title | Exact fact type | Authoritative source | Last verified | Status | Canonical location |
+|---|---|---|---|---|---|---|
+| [document-id] | [title] | [URL, ID, date, figure, version, or other non-secret value] | [URL or record] | YYYY-MM-DD | [lifecycle status] | [location] |
+
+Record `none` and the reason when the map contains no exact action-driving facts that justify atomic documents. Never place secret or credential values in this table.
 
 ## Source Inventory
 

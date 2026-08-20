@@ -31,7 +31,7 @@ Date: 2026-08-20 | Agent: Cody | Status: Release Candidate | Pilot Pending
 
 ## Live Pilot Status
 
-No OpenClaw or Hermes production agent was named as a deployment target in the initial build assignment. Live installation, fresh-session discovery, and realistic runtime retrieval must be recorded for the first approved pilot before fleet-wide deployment.
+The first proposed pilot is now the bounded Ruby/Hermes Percify MCP knowledge map in `docs/pilot-plan.md`. Live installation, fresh-session discovery, atomic-document behavior, Hindsight pointer behavior, realistic runtime retrieval, and rollback must be recorded before fleet-wide deployment.
 
 The local build environment did not have an OpenClaw or Hermes executable, so no claim of live runtime discovery is made in this record.
 
@@ -45,3 +45,14 @@ The local build environment did not have an OpenClaw or Hermes executable, so no
 - Notion database metadata fields: `Status`, `Last Updated`, and `Owner/Agent` added; SOP properties and matching frontmatter re-fetched and verified.
 - Repository privacy: confirmed public and remains a blocking gate because the available connected GitHub controls do not expose visibility changes.
 - Live one-agent pilot: remains required before production or fleet promotion.
+
+## Ruby Review Improvement Pass
+
+- Atomic-document rule for exact non-secret facts: added to research, deduplication, the shared workflow, the manifest template, and completion evidence.
+- Secret-handling correction: token and credential values are expressly forbidden; only safe credential references may be recorded.
+- Existing ZedBiz skill reuse: explicit checks added for the installed routing, record, Notion publishing, and small-bite research skills, with migration-name handling.
+- Hermes memory interaction: Hindsight recall, authoritative-first durable writes, compact pointers, asynchronous retention verification, and the ZedBiz seven-day staleness rule added.
+- Z-Knowledge lifecycle: `Intake`, `Draft`, `Needs Verification`, `Active Reference`, `Needs Review`, and `Archived` added to map and storage guidance.
+- Repository operating boundaries: Diagnose/Get-er-Done, GitHub/Notion authority, channel boundary, and permission rules added to `AGENTS.md`.
+- First pilot: a narrow Ruby/Hermes Percify MCP plan and objective pass/fail evidence added.
+- Repository validator, Python syntax, package build, generated-package validation, canonical skill validation, and Git whitespace check: passed after the Ruby review changes.

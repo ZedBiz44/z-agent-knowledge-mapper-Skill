@@ -56,6 +56,7 @@ def validate(root: Path, package: bool) -> list[str]:
     if not package:
         repository_files = {
             ".github/workflows/secret-scan.yml",
+            "docs/pilot-plan.md",
             "docs/release-gates.md",
             "docs/security-rollback.md",
         }
@@ -77,6 +78,20 @@ def validate(root: Path, package: bool) -> list[str]:
                 failures.append("History-aware secret scan must fetch full Git history")
             if "gitleaks/gitleaks-action@" not in workflow_text:
                 failures.append("History-aware secret scan must invoke Gitleaks")
+
+        required_content = {
+            "references/research.md": ("Atomic Documents", "Document ID"),
+            "references/deduplication.md": ("Deduplicate Atomic Facts", "Document ID"),
+            "references/hermes.md": ("Memory Layer Interaction", "seven days", "Needs Review"),
+            "references/storage-routing.md": ("Active Reference", "Needs Verification"),
+            "AGENTS.md": ("Operating Modes and Boundaries", "GitHub is the technical source of truth"),
+        }
+        for relative, markers in required_content.items():
+            content_path = root / relative
+            content = content_path.read_text(encoding="utf-8") if content_path.is_file() else ""
+            for marker in markers:
+                if marker not in content:
+                    failures.append(f"{relative} must contain {marker!r}")
 
     for relative in sorted(REQUIRED_REFERENCES):
         if not (root / relative).is_file():

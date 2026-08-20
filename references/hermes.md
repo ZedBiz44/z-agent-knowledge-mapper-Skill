@@ -22,6 +22,18 @@ Do not add Hermes-only frontmatter to the shared `SKILL.md`. Put platform-specif
 - If the only shared wiki is remote or read-only, use it for duplicate detection and retrieval, then write through the approved coordinator or select an authorized Markdown/database fallback.
 - Keep Hermes memory or provider recall as a discovery and continuity layer, not the authoritative copy of a broad knowledge map.
 
+Before creating records, check whether the installed `zedbiz-knowledge-routing` or `z-knowledge-routing`, `z-record-knowledge`, `z-notion-knowledge-publish`, or `small-bite-wiki-research` skill governs the required routing, record, publishing, or staged-research work.
+
+## Memory Layer Interaction
+
+- Recall relevant Hindsight context before mapping or refreshing a ZedBiz domain, but treat recall as a lead and continuity layer rather than final authority.
+- Verify action-driving claims against the atomic document metadata and its authoritative source before acting, publishing, or repeating an exact value.
+- Write durable knowledge to the declared authoritative wiki, Markdown, or governed database path first. Do not use Hermes local memory or Hindsight as the only copy of the map.
+- After the durable write is verified, retain only a compact Hindsight activity pointer containing the subject, status, timestamp, authoritative location or Document ID, and next action. Do not retain full research, raw documents, or competing narrative copies.
+- For ZedBiz Hermes deployments, treat action-driving knowledge with a `last_verified` value more than seven days old as stale. Re-verify it before use; if verification is impossible, mark it `Needs Review` and do not present it as current.
+- Prefer updating an existing Hindsight pointer over creating duplicates, and verify that asynchronous retention completed or that the pointer can be recalled.
+- Local conversational memory may preserve context, decisions, and lessons, but it must point to—not replace—the authoritative record.
+
 ## Verification
 
 - Reopen saved records through the Hermes tools the agent will use.

@@ -38,11 +38,13 @@ Date: 2026-08-20 | Agent: Cody | Status: Release Candidate | Pilot Pending
 - Notion owns the human operational SOP, assignments, approvals, and completion summaries.
 - The mapped subject's owner selects the authoritative home for its knowledge.
 - Wiki, Markdown, database, document store, and memory may coexist, but each record type must have one declared authority.
+- Hindsight and local memory provide recall and compact continuity pointers; they do not replace atomic or narrative records in the declared authoritative destination.
 
 ## Controls
 
 - Operating mode: follow the assigned task mode. Diagnose Mode requires solution and confirmation before mutation.
 - Pilot rule: install and test on one approved OpenClaw or Hermes agent before wider rollout.
+- First pilot: use the bounded Ruby/Hermes Percify MCP plan in `docs/pilot-plan.md` after privacy, merge, version, and authorization gates pass.
 - Pilot version rule: install by immutable release-candidate tag or exact commit, never a moving branch.
 - Approval: require human approval for destructive merge, deletion, move, privilege change, production service change, restricted data handling, or broader rollout.
 - Retry limit: stop after three failures for the same validation or repair condition.

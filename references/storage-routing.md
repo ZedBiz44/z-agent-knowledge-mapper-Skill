@@ -67,7 +67,7 @@ title: Descriptive title
 owner: Stable role, team, agent, or subject
 scope: Knowledge domain and intended use
 record_type: source | entity | concept | procedure | decision | synthesis | glossary | index | report
-status: draft | active | review-needed | deprecated
+status: Intake | Draft | Needs Verification | Active Reference | Needs Review | Archived
 sources:
   - https://example.com/source
 captured: YYYY-MM-DD
@@ -78,6 +78,8 @@ aliases:
 ```
 
 Use the destination's native fields instead of duplicating them in frontmatter.
+
+When a destination uses different status labels, document an unambiguous mapping to the Z-Knowledge lifecycle. Do not leave a knowledge map in an untracked parallel status.
 
 ## Suggested Map Shape
 
