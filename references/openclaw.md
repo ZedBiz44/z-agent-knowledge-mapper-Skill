@@ -8,7 +8,7 @@ Use the canonical shared `z-agent-knowledge-mapper` package. Do not create an Op
 - For a repository install, inspect the source and use the current Git installer only after approval:
 
 ```text
-openclaw skills install git:ZedBiz44/z-agent-knowledge-mapper-Skill
+openclaw skills install git:<owner>/<repository>
 ```
 
 - For a controlled local deployment, install the generated `dist/z-agent-knowledge-mapper/` package into the approved workspace or managed skill root.
@@ -25,7 +25,7 @@ Do not assume every OpenClaw host has the same user, workspace, container layout
 - Follow the active wiki's supported top-level lanes, metadata, naming, privacy, compile, lint, and ownership rules.
 - If the wiki is read-only for this agent, use it for duplicate detection and retrieval but route writes to the approved coordinator or writable canonical source.
 - If no maintained wiki exists, use the approved Markdown or database fallback from [storage routing](storage-routing.md).
-- Before creating records, check whether the installed `zedbiz-knowledge-routing` or `z-knowledge-routing`, `z-record-knowledge`, `z-notion-knowledge-publish`, or `small-bite-wiki-research` skill governs the required routing, record, publishing, or staged-research work.
+- Before creating records, inspect installed specialist skills and use any narrower workflow that governs routing, record creation, publishing, or staged research.
 
 Never invent a wiki root from a common example. The current runtime is the authority for the active path.
 

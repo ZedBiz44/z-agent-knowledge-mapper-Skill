@@ -22,17 +22,17 @@ Do not add Hermes-only frontmatter to the shared `SKILL.md`. Put platform-specif
 - If the only shared wiki is remote or read-only, use it for duplicate detection and retrieval, then write through the approved coordinator or select an authorized Markdown/database fallback.
 - Keep Hermes memory or provider recall as a discovery and continuity layer, not the authoritative copy of a broad knowledge map.
 
-Before creating records, check whether the installed `zedbiz-knowledge-routing` or `z-knowledge-routing`, `z-record-knowledge`, `z-notion-knowledge-publish`, or `small-bite-wiki-research` skill governs the required routing, record, publishing, or staged-research work.
+Before creating records, inspect installed specialist skills and use any narrower workflow that governs routing, record creation, publishing, or staged research.
 
 ## Memory Layer Interaction
 
-- Recall relevant Hindsight context before mapping or refreshing a ZedBiz domain, but treat recall as a lead and continuity layer rather than final authority.
-- Verify action-driving claims against the atomic document metadata and its authoritative source before acting, publishing, or repeating an exact value.
-- Write durable knowledge to the declared authoritative wiki, Markdown, or governed database path first. Do not use Hermes local memory or Hindsight as the only copy of the map.
-- After the durable write is verified, retain only a compact Hindsight activity pointer containing the subject, status, timestamp, authoritative location or Document ID, and next action. Do not retain full research, raw documents, or competing narrative copies.
-- For ZedBiz Hermes deployments, treat action-driving knowledge with a `last_verified` value more than seven days old as stale. Re-verify it before use; if verification is impossible, mark it `Needs Review` and do not present it as current.
-- Prefer updating an existing Hindsight pointer over creating duplicates, and verify that asynchronous retention completed or that the pointer can be recalled.
-- Local conversational memory may preserve context, decisions, and lessons, but it must point to—not replace—the authoritative record.
+- Inspect the active memory provider, local memory, privacy scope, sharing rules, and retention behavior before use.
+- Recall relevant context before mapping or refreshing a domain, but treat recalled material as a lead unless the environment declares it authoritative.
+- Verify action-driving claims against canonical metadata and authoritative sources before acting, publishing, or repeating exact values.
+- Write durable knowledge to the declared authoritative wiki, repository, database, or document system first. Do not use conversational or episodic memory as the only copy of a broad knowledge map.
+- After a durable write is verified, retain only the compact continuity pointer or lesson allowed by local policy. Do not retain full research, raw documents, or competing narrative copies by default.
+- Apply the local freshness and staleness rules. If none exist, use source volatility and risk to set review triggers rather than inventing a fixed age limit.
+- Prefer updating an existing memory pointer over creating duplicates, and verify that asynchronous retention completed when the provider works asynchronously.
 
 ## Verification
 

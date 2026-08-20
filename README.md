@@ -18,17 +18,18 @@ It supports OpenClaw and Hermes from one canonical skill. Platform differences l
 - It prefers a maintained wiki when one is genuinely available.
 - It falls back to structured Markdown or an approved database when no usable wiki exists.
 - It verifies through the intended agent's live retrieval surface.
+- It maps both technical or agent-execution knowledge and human-operator knowledge when those tracks exist.
+- It preserves reusable operational building blocks without automatically creating guides or SOPs.
 
 This skill complements narrower routing, record, wiki, and database-publishing skills. It can use those as implementation helpers without duplicating their platform-specific procedures.
 
-In ZedBiz environments, it explicitly checks `zedbiz-knowledge-routing` or `z-knowledge-routing`, `z-record-knowledge`, `z-notion-knowledge-publish`, and `small-bite-wiki-research` before creating records.
-
 ## Release Status
 
-- Current version: `v0.1.0-rc1` release candidate.
+- Planned release-candidate tag: `v0.1.0-rc1` after the reviewed changes merge.
 - Runtime evidence: pending one named pilot agent.
 - Fleet rollout: blocked until the pilot passes.
 - Proprietary deployment: blocked until repository visibility is private.
+- External distribution: requires an explicit licensing and publication decision; the current proprietary license does not grant reuse rights.
 - Promotion evidence: use `docs/release-gates.md` and `docs/test-prompts.md`.
 
 ## Source of Truth
@@ -45,6 +46,7 @@ The skill was designed from ZedBiz's proprietary `z-support-doc-ingestion` workf
 - `references/research.md`: source discovery, evidence, coverage, and synthesis.
 - `references/deduplication.md`: canonical-record decisions and duplicate prevention.
 - `references/storage-routing.md`: wiki-first, Markdown, database, and hybrid routing.
+- `references/operational-reuse.md`: dual-track coverage and operational knowledge importance rules.
 - `references/openclaw.md`: OpenClaw discovery, storage, and verification adapter.
 - `references/hermes.md`: Hermes discovery, storage, and verification adapter.
 - `assets/knowledge-map-template.md`: optional durable coverage manifest.
@@ -53,7 +55,6 @@ The skill was designed from ZedBiz's proprietary `z-support-doc-ingestion` workf
 - `scripts/validate_repository.py`: runs deterministic repository checks.
 - `.github/workflows/secret-scan.yml`: runs a history-aware Gitleaks scan in GitHub Actions.
 - `docs/release-gates.md`: records privacy, pilot, security, version, and promotion gates.
-- `docs/pilot-plan.md`: defines the narrow first Ruby/Hermes pilot and its pass/fail evidence.
 
 ## Build and Validate
 

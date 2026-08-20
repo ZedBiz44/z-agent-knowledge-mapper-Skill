@@ -26,6 +26,8 @@ Do not use page count as the primary coverage measure. Coverage is the set of im
 
 ## Discover Sources
 
+Go beyond surface pages. Follow relevant links and indexes until the coverage plan is satisfied or a clear gap remains.
+
 Use the lightest reliable discovery methods available:
 
 - supplied source list;
@@ -69,6 +71,7 @@ Use current live verification for changeable facts when feasible. Label inferenc
 - Prefer concise operational guidance over copied prose.
 - State freshness and review triggers for changeable domains.
 - Preserve exact wording only when legally or operationally necessary and allowed.
+- Capture meaningful discoveries at checkpoints, not every action. Preserve verified workarounds, recurring friction, important decisions, and reusable operational knowledge.
 
 ## Create Atomic Documents for Exact Facts
 

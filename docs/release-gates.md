@@ -30,8 +30,6 @@ The shared OpenClaw and Hermes architecture is approved as a release candidate. 
 
 ## Single-Agent Pilot Gate
 
-The first proposed pilot is the bounded Ruby/Hermes Percify MCP knowledge map in `docs/pilot-plan.md`. It remains proposed until repository privacy, merge, version, and pilot authorization gates are satisfied.
-
 Record:
 
 - named agent and OpenClaw or Hermes runtime version;
@@ -43,6 +41,8 @@ Record:
 - retrieval by domain, alias, and practical question;
 - one opened canonical record with source support;
 - one realistic business task completed from saved knowledge;
+- technical or agent-execution and human-operator track evidence when applicable;
+- operational reuse signals preserved without unrequested guide or SOP creation;
 - prior package and knowledge-state rollback evidence.
 
 ## Promotion Rule

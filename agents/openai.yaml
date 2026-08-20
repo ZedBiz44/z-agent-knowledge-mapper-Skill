@@ -1,4 +1,4 @@
 interface:
   display_name: "Z Agent Knowledge Mapper"
   short_description: "Research and map durable, deduplicated agent knowledge"
-  default_prompt: "Use $z-agent-knowledge-mapper to research, deduplicate, organize, store, and verify a broad knowledge domain."
+  default_prompt: "Use $z-agent-knowledge-mapper to map a broad knowledge domain, cover applicable technical and human tracks, preserve reusable operational knowledge, and verify retrieval."

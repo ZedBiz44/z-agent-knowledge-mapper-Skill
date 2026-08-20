@@ -14,6 +14,7 @@ REQUIRED_REFERENCES = {
     "references/research.md",
     "references/deduplication.md",
     "references/storage-routing.md",
+    "references/operational-reuse.md",
     "references/openclaw.md",
     "references/hermes.md",
 }
@@ -56,7 +57,6 @@ def validate(root: Path, package: bool) -> list[str]:
     if not package:
         repository_files = {
             ".github/workflows/secret-scan.yml",
-            "docs/pilot-plan.md",
             "docs/release-gates.md",
             "docs/security-rollback.md",
         }
@@ -82,9 +82,10 @@ def validate(root: Path, package: bool) -> list[str]:
         required_content = {
             "references/research.md": ("Atomic Documents", "Document ID"),
             "references/deduplication.md": ("Deduplicate Atomic Facts", "Document ID"),
-            "references/hermes.md": ("Memory Layer Interaction", "seven days", "Needs Review"),
-            "references/storage-routing.md": ("Active Reference", "Needs Verification"),
-            "AGENTS.md": ("Operating Modes and Boundaries", "GitHub is the technical source of truth"),
+            "references/hermes.md": ("Memory Layer Interaction", "local freshness"),
+            "references/storage-routing.md": ("Discover Local Knowledge Layers", "Episodic or reflection memory"),
+            "references/operational-reuse.md": ("Use Both Tracks as an Importance Filter", "Do not automatically assemble"),
+            "AGENTS.md": ("Operating Modes and Boundaries", "version control authoritative"),
         }
         for relative, markers in required_content.items():
             content_path = root / relative
@@ -92,6 +93,26 @@ def validate(root: Path, package: bool) -> list[str]:
             for marker in markers:
                 if marker not in content:
                     failures.append(f"{relative} must contain {marker!r}")
+
+        portable_roots = [root / "SKILL.md", root / "references", root / "assets"]
+        organization_specific = {
+            "ZedBiz": r"\bZedBiz\b",
+            "Z-Knowledge": r"\bZ-Knowledge\b",
+            "Hindsight": r"\bHindsight\b",
+            "Percify": r"\bPercify\b",
+            "named internal skill": r"\b(?:zedbiz-knowledge-routing|z-knowledge-routing|z-record-knowledge|z-notion-knowledge-publish|small-bite-wiki-research)\b",
+        }
+        portable_files: list[Path] = []
+        for portable_root in portable_roots:
+            if portable_root.is_file():
+                portable_files.append(portable_root)
+            elif portable_root.is_dir():
+                portable_files.extend(p for p in portable_root.rglob("*") if p.is_file())
+        for path in portable_files:
+            content = path.read_text(encoding="utf-8", errors="replace")
+            for label, pattern in organization_specific.items():
+                if re.search(pattern, content, re.IGNORECASE):
+                    failures.append(f"Portable package contains {label} in {path.relative_to(root)}")
 
     for relative in sorted(REQUIRED_REFERENCES):
         if not (root / relative).is_file():
