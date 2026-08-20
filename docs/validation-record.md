@@ -24,8 +24,10 @@ Date: 2026-08-20 | Agent: Cody | Status: Structural Validation Passed; Live Pilo
 - Positive, paraphrased, boundary, and negative trigger review: passed at the static release-candidate level
 - Current official OpenClaw and Hermes skill documentation review: passed
 - Git diff whitespace check: passed
-- GitHub commit and issue record: pending publication
-- Notion SOP and journal read-back: pending publication
+- GitHub initial release commit: passed (`2344a8d`)
+- GitHub issue record: passed (issue 1)
+- Notion SOP properties, parent, metadata line, and content read-back: passed
+- Cody Technical Documentation journal creation and initial read-back: passed; final completion update follows the release record
 
 ## Live Pilot Status
 
