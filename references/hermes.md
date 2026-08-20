@@ -22,6 +22,18 @@ Do not add Hermes-only frontmatter to the shared `SKILL.md`. Put platform-specif
 - If the only shared wiki is remote or read-only, use it for duplicate detection and retrieval, then write through the approved coordinator or select an authorized Markdown/database fallback.
 - Keep Hermes memory or provider recall as a discovery and continuity layer, not the authoritative copy of a broad knowledge map.
 
+Before creating records, inspect installed specialist skills and use any narrower workflow that governs routing, record creation, publishing, or staged research.
+
+## Memory Layer Interaction
+
+- Inspect the active memory provider, local memory, privacy scope, sharing rules, and retention behavior before use.
+- Recall relevant context before mapping or refreshing a domain, but treat recalled material as a lead unless the environment declares it authoritative.
+- Verify action-driving claims against canonical metadata and authoritative sources before acting, publishing, or repeating exact values.
+- Write durable knowledge to the declared authoritative wiki, repository, database, or document system first. Do not use conversational or episodic memory as the only copy of a broad knowledge map.
+- After a durable write is verified, retain only the compact continuity pointer or lesson allowed by local policy. Do not retain full research, raw documents, or competing narrative copies by default.
+- Apply the local freshness and staleness rules. If none exist, use source volatility and risk to set review triggers rather than inventing a fixed age limit.
+- Prefer updating an existing memory pointer over creating duplicates, and verify that asynchronous retention completed when the provider works asynchronously.
+
 ## Verification
 
 - Reopen saved records through the Hermes tools the agent will use.

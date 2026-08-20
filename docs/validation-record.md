@@ -1,36 +1,41 @@
 # Validation Record
 
-Date: 2026-08-20 | Agent: Cody | Status: Structural Validation Passed; Live Pilot Pending
+Date: 2026-08-20 | Agent: Cody | Status: Release Candidate | Pilot Pending
 
-## Release Candidate Scope
+## Current Release-Candidate Scope
 
-- Canonical cross-platform skill
-- OpenClaw and Hermes adapters
-- Research, deduplication, storage-routing, and knowledge-map resources
-- Codex/OpenAI interface metadata
-- Portable build and validation scripts
-- Proprietary license and source attribution
+- Portable shared skill for broad knowledge mapping.
+- Conditional technical or agent-execution and human-operator tracks.
+- Operational reuse signals used as an importance and storage filter.
+- Explicit rule against creating unrequested SOPs, guides, training assets, or commercial documents.
+- Provider-neutral local knowledge-layer discovery.
+- Wiki-first storage with Markdown, database, document-system, and hybrid fallbacks.
+- OpenClaw and Hermes runtime adapters without organization-specific knowledge rules.
+- Atomic exact-fact records, duplicate control, freshness, retrieval proof, and rollback guidance.
 
-## Required Checks
+## Static Validation
 
-- Repository structural validator: passed
-- Canonical ZedBiz skill validator on the correctly named package: passed
-- Python syntax check for build and validation scripts: passed
-- Package build: passed
-- Generated-package validation: passed
-- Source/package SHA-256 comparison: passed for every packaged file
-- Broken-reference scan: passed
-- Secret-pattern scan: passed
-- Positive, paraphrased, boundary, and negative trigger review: passed at the static release-candidate level
-- Current official OpenClaw and Hermes skill documentation review: passed
-- Git diff whitespace check: passed
-- GitHub initial release commit: passed (`2344a8d`)
-- GitHub issue record: passed (issue 1)
-- Notion SOP properties, parent, metadata line, and content read-back: passed
-- Cody Technical Documentation journal creation and initial read-back: passed; final completion update follows the release record
+- Repository structural validator: passed.
+- Python syntax check: passed.
+- Package build and generated-package validation: passed.
+- Canonical skill validator: passed.
+- Source/package comparison: passed; all nine packaged files matched by SHA-256.
+- Broken-reference and Git whitespace checks: passed.
+- Narrow current-tree secret screen: passed; this is not a complete security audit.
+- History-aware secret scan: passed for portability commit `fcf8e6c` in [GitHub Actions run 32402210833](https://github.com/ZedBiz44/z-agent-knowledge-mapper-Skill/actions/runs/32402210833).
+- Portable-package organization/provider-name screen: passed.
+
+## Behavior Review
+
+- Positive and paraphrased broad-mapping triggers: passed static review.
+- Quick lookup, one-off answer, single-record, and routine-maintenance negatives: passed static review.
+- Dual-track domain: passed static review.
+- Single-applicable-track domain: passed static review.
+- Operational reuse signals without unrequested guide creation: passed static review.
+- Unfamiliar storage and memory products mapped by role and authority: passed static review.
 
 ## Live Pilot Status
 
-No OpenClaw or Hermes production agent was named as a deployment target in the initial build assignment. Live installation, fresh-session discovery, and realistic runtime retrieval must be recorded for the first approved pilot before fleet-wide deployment.
+No production pilot is claimed. Select the pilot and domain in the authorized operational tracking system rather than hard-coding an organization, agent, platform account, or vendor into the portable package.
 
-The local build environment did not have an OpenClaw or Hermes executable, so no claim of live runtime discovery is made in this record.
+Production and fleet rollout remain blocked until an approved pilot passes discovery, triggering, applicable track behavior, storage, retrieval, a realistic task, negative triggering, and rollback.

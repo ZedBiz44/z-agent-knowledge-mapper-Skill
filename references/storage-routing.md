@@ -11,6 +11,21 @@ Use the first destination that is authorized, maintained, writable, searchable, 
 
 The first technically available destination is not automatically appropriate. Confirm ownership, source-of-truth boundaries, privacy, retrieval, and durability.
 
+## Discover Local Knowledge Layers
+
+Inspect the environment's actual instructions, tools, schemas, specialist workflows, and access rules. Map available systems by function and authority rather than by product name:
+
+- **Operating instructions:** persistent rules that govern agent or team behavior.
+- **Canonical knowledge base:** maintained wiki, repository, database, or document system that owns durable knowledge.
+- **Operational system:** business system that owns live records, status, assignments, approvals, or transactions.
+- **Episodic or reflection memory:** provider that preserves compact lessons, friction, decisions, or continuity pointers.
+- **Technical source control:** authoritative code, configuration, schemas, prompts, and release history.
+- **Working context:** temporary session or task information that should not become durable knowledge by default.
+
+One product may serve several roles, or several products may share them. Declare which system owns each claim type. Do not require a named implementation profile when the local environment already exposes these rules clearly.
+
+Use episodic or reflection memory as supporting context unless the environment explicitly designates it as authoritative. Prefer compact pointers to canonical records over full duplicate documents.
+
 ## Wiki Qualification
 
 A destination qualifies as the preferred wiki only when it has:
@@ -67,7 +82,7 @@ title: Descriptive title
 owner: Stable role, team, agent, or subject
 scope: Knowledge domain and intended use
 record_type: source | entity | concept | procedure | decision | synthesis | glossary | index | report
-status: draft | active | review-needed | deprecated
+status: draft | needs-verification | active | needs-review | archived
 sources:
   - https://example.com/source
 captured: YYYY-MM-DD
@@ -78,6 +93,8 @@ aliases:
 ```
 
 Use the destination's native fields instead of duplicating them in frontmatter.
+
+When a destination uses different status labels, use its governed workflow and document an unambiguous mapping. Do not leave a knowledge map in an untracked parallel status.
 
 ## Suggested Map Shape
 
@@ -103,3 +120,11 @@ Avoid one huge undifferentiated document and avoid a separate page for every min
 - Re-fetch or reopen each batch before continuing.
 - Require approval for destructive moves, merges, deletions, permission changes, or publication into a new authoritative system.
 - If verification fails, stop further writes and restore or retain the last known-good state.
+
+## Refresh and Ownership
+
+- Assign one stable owner for the map and one owner for each authoritative destination when they differ.
+- Record a review cadence based on change risk: fast-changing operational or regulated knowledge needs more frequent review than stable historical knowledge.
+- Use event-based refresh triggers for vendor releases, policy or law changes, migrations, source deprecations, ownership changes, contradictions, and failed retrieval tests.
+- Re-run source freshness, duplicate search, integrity checks, live retrieval, and a realistic task after material updates.
+- Keep review evidence in the operational tracking system; keep the evergreen knowledge focused on current truth.

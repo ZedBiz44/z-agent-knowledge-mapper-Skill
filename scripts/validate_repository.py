@@ -14,6 +14,7 @@ REQUIRED_REFERENCES = {
     "references/research.md",
     "references/deduplication.md",
     "references/storage-routing.md",
+    "references/operational-reuse.md",
     "references/openclaw.md",
     "references/hermes.md",
 }
@@ -52,6 +53,66 @@ def validate(root: Path, package: bool) -> list[str]:
 
     if root.name != EXPECTED_NAME and package:
         failures.append(f"Package directory must be {EXPECTED_NAME!r}; found {root.name!r}")
+
+    if not package:
+        repository_files = {
+            ".github/workflows/secret-scan.yml",
+            "docs/release-gates.md",
+            "docs/security-rollback.md",
+        }
+        for relative in sorted(repository_files):
+            if not (root / relative).is_file():
+                failures.append(f"Missing repository control: {relative}")
+
+        readme_path = root / "README.md"
+        readme = readme_path.read_text(encoding="utf-8") if readme_path.is_file() else ""
+        if "Release Candidate | Pilot Pending" not in readme:
+            failures.append("README must show the release-candidate pilot-pending status")
+        if "Repository privacy gate" not in readme:
+            failures.append("README must show the proprietary repository privacy gate")
+
+        workflow = root / ".github" / "workflows" / "secret-scan.yml"
+        if workflow.is_file():
+            workflow_text = workflow.read_text(encoding="utf-8")
+            if "fetch-depth: 0" not in workflow_text:
+                failures.append("History-aware secret scan must fetch full Git history")
+            if "gitleaks/gitleaks-action@" not in workflow_text:
+                failures.append("History-aware secret scan must invoke Gitleaks")
+
+        required_content = {
+            "references/research.md": ("Atomic Documents", "Document ID"),
+            "references/deduplication.md": ("Deduplicate Atomic Facts", "Document ID"),
+            "references/hermes.md": ("Memory Layer Interaction", "local freshness"),
+            "references/storage-routing.md": ("Discover Local Knowledge Layers", "Episodic or reflection memory"),
+            "references/operational-reuse.md": ("Use Both Tracks as an Importance Filter", "Do not automatically assemble"),
+            "AGENTS.md": ("Operating Modes and Boundaries", "version control authoritative"),
+        }
+        for relative, markers in required_content.items():
+            content_path = root / relative
+            content = content_path.read_text(encoding="utf-8") if content_path.is_file() else ""
+            for marker in markers:
+                if marker not in content:
+                    failures.append(f"{relative} must contain {marker!r}")
+
+        portable_roots = [root / "SKILL.md", root / "references", root / "assets"]
+        organization_specific = {
+            "ZedBiz": r"\bZedBiz\b",
+            "Z-Knowledge": r"\bZ-Knowledge\b",
+            "Hindsight": r"\bHindsight\b",
+            "Percify": r"\bPercify\b",
+            "named internal skill": r"\b(?:zedbiz-knowledge-routing|z-knowledge-routing|z-record-knowledge|z-notion-knowledge-publish|small-bite-wiki-research)\b",
+        }
+        portable_files: list[Path] = []
+        for portable_root in portable_roots:
+            if portable_root.is_file():
+                portable_files.append(portable_root)
+            elif portable_root.is_dir():
+                portable_files.extend(p for p in portable_root.rglob("*") if p.is_file())
+        for path in portable_files:
+            content = path.read_text(encoding="utf-8", errors="replace")
+            for label, pattern in organization_specific.items():
+                if re.search(pattern, content, re.IGNORECASE):
+                    failures.append(f"Portable package contains {label} in {path.relative_to(root)}")
 
     for relative in sorted(REQUIRED_REFERENCES):
         if not (root / relative).is_file():

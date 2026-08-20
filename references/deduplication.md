@@ -27,6 +27,15 @@ Compare each candidate by:
 
 Records are duplicates only when these dimensions substantially match. Similar topics may need separate records when their owners, audiences, evidence standards, or lifecycles differ.
 
+## Deduplicate Atomic Facts
+
+- Search by Document ID, exact value, authoritative source URL, aliases, and owning subject before creating an atomic document.
+- Keep one canonical atomic document for each exact fact within the same owner, scope, version, and lifecycle.
+- Update the existing atomic document when the authoritative value changes; preserve required history without leaving the old value active.
+- Link narrative records to the atomic document instead of copying the exact value into multiple narratives.
+- Keep separate atomic documents when owner, environment, geography, version, privacy, or lifecycle differs.
+- Never create an atomic document for a secret value. A credential reference may be stored only when it reveals no secret and the destination is authorized.
+
 ## Choose One Action
 
 - `reused`: the current canonical record already meets the need.
@@ -52,3 +61,4 @@ Records are duplicates only when these dimensions substantially match. Similar t
 - Put changing status in operational tracking, not copied into evergreen pages.
 - Prefer links and compact pointers over copied sections.
 - Record the source, owner, freshness, and review trigger on canonical records.
+- Maintain stable Document IDs for atomic facts and include them in duplicate searches and completion evidence.
