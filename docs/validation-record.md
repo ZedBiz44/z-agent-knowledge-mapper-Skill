@@ -56,3 +56,4 @@ The local build environment did not have an OpenClaw or Hermes executable, so no
 - Repository operating boundaries: Diagnose/Get-er-Done, GitHub/Notion authority, channel boundary, and permission rules added to `AGENTS.md`.
 - First pilot: a narrow Ruby/Hermes Percify MCP plan and objective pass/fail evidence added.
 - Repository validator, Python syntax, package build, generated-package validation, canonical skill validation, and Git whitespace check: passed after the Ruby review changes.
+- History-aware Gitleaks workflow: passed for Ruby review commit `288c9a5` in [GitHub Actions run 32353334122](https://github.com/ZedBiz44/z-agent-knowledge-mapper-Skill/actions/runs/32353334122).
